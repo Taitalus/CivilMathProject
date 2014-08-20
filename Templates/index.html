@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/site_media/styles.css" type="text/css" media="all">
     <script type="text/javascript" src="/site_media/js/main.js"></script>
     <script type="text/javascript" src="/site_media/js/script.js" defer="defer"></script>
+    <script type="text/javascript" src="/site_media/js/home.js"></script>
     <!--[if lt IE 8]>
     <div style=' clear: both; text-align:center; position: relative;z-index:100;'>
         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="/site_media/http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a>
@@ -175,52 +176,43 @@
                 <strong class="text color1 upper">Required Data</strong>
                 <div>
                     <table>
-                        <tr>
-                            <td><p class="button1">Vertical load on column including self weight, P1:</p></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td><p class="button1">Downward load on footing bed due to w, Pw:</p></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td><p class="button1">Overturning moment at foundation bottom level, M:</p></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td><p class="button1">Maximum gross bearing pressure, b:</p></td>
-                            <td><input type="text"></td>
-                        </tr>
+                        <form action="/Calculate/" method="GET">
+                            {%csrf_token%}
+                            <tr>
+                                <td><p class="button1">Vertical load on column including self weight, P1:</p></td>
+                                <td><input id="P1" name="P1" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><p class="button1">Uniform Downward Load due to soil and footing on foundation bed, w:</p></td>
+                                <td><input id="W" name="W" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><p class="button1">Overturning moment about X axis(parallel to long side), M<sub>x</sub>:</p></td>
+                                <td><input id="MX" name="MX"type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><p class="button1">Overturning moment about Y axis(parallel to short side), M<sub>y</sub>:</p></td>
+                                <td><input id="MY" name="MY" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><p class="button1">Net Safe bearing capacity of soil, a<sub>1</sub>:</p></td>
+                                <td><input id="A1" name="A1" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><p class="button1">Ratio of Short side to Long side, r:</p></td>
+                                <td><input id="R" name="R" type="text"></td>
+                            </tr>
                     </table>
 
                 </div>
                 <div align="center" style="padding-top:20px;">
-                    <a href="#!/page_MORE" class="button">Submit</a>
+                    <input type="submit" id="submit_button" class="button">Submit</a>
                 </div>
+
+                </form>
+
             </div></div>
         </div>
-        <div class="col0"></div>
-        <div class="col5">
-
-            <h2>Components</h2>
-
-            <ul class="ul1">
-                <li><a href="#">Lorem ipsum dolor sit amet </a></li>
-                <li><a href="#">epsum dolor sit amet</a></li>
-                <li><a href="#">Sed blandit lectus eget </a></li>
-                <li><a href="#">lectus et dolorese </a></li>
-                <li><a href="#">dolo resemaliqua</a></li>
-                <li><a href="#">blandi lectuse etuset </a></li>
-                <li><a href="#">Lorem ipsum dolor sit amet </a></li>
-                <li><a href="#">epsum dolor sit amet</a></li>
-                <li><a href="#">Sed blandit lectus eget </a></li>
-                <li><a href="#">lectus et dolorese </a></li>
-                <li><a href="#">dolo resemaliqua</a></li>
-                <li><a href="#">blandi lectuse etuset </a></li>
-                <li><a href="#">Lorem ipsum dolor sit amet </a></li>
-            </ul>
-        </div>
-
 
         <div class="clear"></div>
     </div>
