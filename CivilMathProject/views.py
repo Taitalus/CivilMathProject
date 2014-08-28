@@ -9,7 +9,7 @@ from django.template.context import RequestContext
 from django.utils import simplejson
 from django.http.response import HttpResponse
 def home(request):
-    return render_to_response('index.html',{},context_instance=RequestContext(request))
+    return render_to_response('index_new.html',{},context_instance=RequestContext(request))
 
 def Calculate(request):
     if request.method=="GET":
