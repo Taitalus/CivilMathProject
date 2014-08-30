@@ -12,6 +12,10 @@ def home(request):
     return render_to_response('index_new.html',{},context_instance=RequestContext(request))
 def formula1(request):
     return render_to_response('formula-01.html',{},context_instance=RequestContext(request))
+def formula2(request):
+    return render_to_response('formula-02.html',{},context_instance=RequestContext(request))
+def formula3(request):
+    return render_to_response('formula-03.html',{},context_instance=RequestContext(request))	
 def CalculateFormula1(request):
     if request.method=="GET":
         P1=request.GET.get(u'P1','')

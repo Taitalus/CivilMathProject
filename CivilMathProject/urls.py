@@ -11,6 +11,8 @@ urlpatterns = patterns('',
     url(r'^Home/$', 'CivilMathProject.views.home', name='home'),
     url(r'^Home/.*/CalculateFormula1/$','CivilMathProject.views.CalculateFormula1',name='Calculate'),
     url(r'^Home/formula1/$', 'CivilMathProject.views.formula1',name='formula1'),
+	url(r'^Home/formula2/$', 'CivilMathProject.views.formula2',name='formula2'),
+	url(r'^Home/formula3/$', 'CivilMathProject.views.formula3',name='formula3'),
     # url(r'^CivilMathProject/', include('CivilMathProject.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

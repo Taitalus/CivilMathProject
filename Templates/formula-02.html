@@ -1,8 +1,8 @@
 {%extends 'BaseTemplate.html' %}
 {%block pageheader%}
-    <h2>Finding the length of a footing</h2>
+    <h2>Formula 02</h2>
 {%endblock%}
-{%block page_active_formula1%}active{%endblock%}
+{%block page_active_formula2%}active{%endblock%}
 {%block page_content%}
     <ul class="nav nav-tabs" role="tablist">
         <li class="active"><a href="#home" role="tab" data-toggle="tab">Calculation</a></li>
@@ -16,65 +16,65 @@
                 <table style="margin-top: 2%">
                     <tr>
                         <td width="70%">
-                            <table width="100%">
+                            <!--table width="100%">
                                 <thead>
                                     <td colspan="2" align="center" style="border-bottom: 2px solid #ccc"><b class="text"><h3>Input</h3></b></td>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td><p class="button1">Vertical load on column including self weight, P1:</p></td>
-                                        <td><input id="P1" name="P1" class="textbox" type="text"></td>
+                                        <td><input id="P1" name="P1" type="text"></td>
                                     </tr>
                                     <tr>
                                         <td><p class="button1">Uniform Downward Load due to soil and footing on foundation bed, w:</p></td>
-                                        <td><input id="W" name="W" class="textbox" type="text"></td>
+                                        <td><input id="W" name="W" type="text"></td>
                                     </tr>
                                     <tr>
                                         <td><p class="button1">Overturning moment about X axis(parallel to long side), M<sub>x</sub>:</p></td>
-                                        <td><input id="MX" name="MX" class="textbox" type="text"></td>
+                                        <td><input id="MX" name="MX"type="text"></td>
                                     </tr>
                                     <tr>
                                         <td><p class="button1">Overturning moment about Y axis(parallel to short side), M<sub>y</sub>:</p></td>
-                                        <td><input id="MY" name="MY" class="textbox" type="text"></td>
+                                        <td><input id="MY" name="MY" type="text"></td>
                                     </tr>
                                     <tr>
                                         <td><p class="button1">Net Safe bearing capacity of soil, a<sub>1</sub>:</p></td>
-                                        <td><input id="A1" name="A1" class="textbox" type="text"></td>
+                                        <td><input id="A1" name="A1" type="text"></td>
                                     </tr>
                                     <tr>
                                         <td><p class="button1">Ratio of Short side to Long side, r:</p></td>
-                                        <td><input id="R" name="R" class="textbox" type="text"></td>
+                                        <td><input id="R" name="R" type="text"></td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table-->
                         </td>
 						<td width="5%"></td>
                         <td width="30%" style="margin-left: 5%;">
-                            <table width="100%" id="result_pane" style="display: none;">
+                            <!--table width="100%" id="result_pane" style="display: none;">
                                 <thead>
                                 <td colspan="2" align="center" style="vertical-align:0%;border-bottom: 2px solid #ccc"><b class="text"><h3>Result</h3></b></td>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><b>Value of L: </b></td>
+                                        <td><b>Value of L:</b></td>
                                         <td id="value_of_L"></td>
                                     </tr>
                                     <tr>
-                                        <td><b>Value of lambda: </b></td>
+                                        <td><b>Value of lambda:</b></td>
                                         <td id="value_of_lambda"></td>
                                     </tr>
                                     <tr>
-                                        <td><b>Equation No: </b></td>
+                                        <td><b>Equation No:</b></td>
                                         <td id="equation_no"></td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table-->
                         </td>
                     </tr>
 
                 </table>
                 <div align="center" style="padding-top:20px;">
-                    <input id="submit_button" class="button minibutton primary" type="button" value="Submit"></a>
+                    <input id="submit_button" type="button" class="button minibutton primary" value="Submit"></a>
                 </div>
         </div>
         <div class="tab-pane" id="profile">
