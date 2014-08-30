@@ -8,7 +8,9 @@ import settings
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'CivilMathProject.views.home', name='home'),
-    url(r'^Calculate/$','CivilMathProject.views.Calculate',name='Calculate'),
+    url(r'^Home/$', 'CivilMathProject.views.home', name='home'),
+    url(r'^Home/.*/CalculateFormula1/$','CivilMathProject.views.CalculateFormula1',name='Calculate'),
+    url(r'^Home/formula1/$', 'CivilMathProject.views.formula1',name='formula1'),
     # url(r'^CivilMathProject/', include('CivilMathProject.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

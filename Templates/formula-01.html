@@ -1,160 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="../site_media/dist/img/logo.ico">
+{%extends 'BaseTemplate.html' %}
+{%block pageheader%}
+    <h2>Finding the length of a footing</h2>
+{%endblock%}
+{%block page_active_formula1%}active{%endblock%}
+{%block page_content%}
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#home" role="tab" data-toggle="tab">Calculation</a></li>
+        <li><a href="#profile" role="tab" data-toggle="tab">I/O-Explanation</a></li>
+        <li><a href="#messages" role="tab" data-toggle="tab">Formulae</a></li>
+        <li><a href="#settings" role="tab" data-toggle="tab">Derivation</a></li>
+        <li><a href="#check_stability" role="tab" data-toggle="tab">Check Stability</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="home">
+                <table style="margin-top: 2%">
+                    <tr>
+                        <td width="70%">
+                            <table width="100%">
+                                <thead>
+                                    <td colspan="2" align="center" style="border-bottom: 2px solid #ccc"><b class="text"><h3>Input</h3></b></td>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><p class="button1">Vertical load on column including self weight, P1:</p></td>
+                                        <td><input id="P1" name="P1" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="button1">Uniform Downward Load due to soil and footing on foundation bed, w:</p></td>
+                                        <td><input id="W" name="W" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="button1">Overturning moment about X axis(parallel to long side), M<sub>x</sub>:</p></td>
+                                        <td><input id="MX" name="MX"type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="button1">Overturning moment about Y axis(parallel to short side), M<sub>y</sub>:</p></td>
+                                        <td><input id="MY" name="MY" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="button1">Net Safe bearing capacity of soil, a<sub>1</sub>:</p></td>
+                                        <td><input id="A1" name="A1" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="button1">Ratio of Short side to Long side, r:</p></td>
+                                        <td><input id="R" name="R" type="text"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td width="30%" style="margin-left: 5%;">
+                            <table width="100%" id="result_pane" style="display: none;">
+                                <thead>
+                                <td colspan="2" align="center" style="vertical-align:0%;border-bottom: 2px solid #ccc"><b class="text"><h3>Result</h3></b></td>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>Value of L:</b></td>
+                                        <td id="value_of_L"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Value of lambda:</b></td>
+                                        <td id="value_of_lambda"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Equation No:</b></td>
+                                        <td id="equation_no"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
 
-    <title>Build Perfect</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../site_media/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="../site_media/offcanvas.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index_new.html">SR Measurement</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index_new.html">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!-- /.nav-collapse -->
-      </div><!-- /.container -->
-    </div><!-- /.navbar -->
-
-    <div class="container">
-
-      <div class="row row-offcanvas row-offcanvas-right">
-
-        <div class="col-xs-12 col-sm-9">
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
-          <div class="jumbotron">
-            <h1>Calculate Easy, Build Perfect!</h1>
-            <p>This is a calculator for your many critical measurement. Try these equations to see your dream come in handy.</p>
-          </div>
-		  
-		 		  		  
-          <div class="row">
-            <!-- Nav tabs -->
-			<ul class="nav nav-tabs" role="tablist">
-			  <li class="active"><a href="#home" role="tab" data-toggle="tab">Calculation</a></li>
-			  <li><a href="#profile" role="tab" data-toggle="tab">I/O-Explanation</a></li>
-			  <li><a href="#messages" role="tab" data-toggle="tab">Formulae</a></li>
-			  <li><a href="#settings" role="tab" data-toggle="tab">Derivation</a></li>
-			</ul>
-
-			<!-- Tab panes -->
-			<div class="tab-content">
-			  <div class="tab-pane active" id="home">
-				Inputs
-			  </div>
-			  <div class="tab-pane" id="profile">Explanation</div>
-			  <div class="tab-pane" id="messages">Things</div>
-			  <div class="tab-pane" id="settings">Step by step</div>
-			</div>
-          </div><!--/row-->
-        </div><!--/span-->
-
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-          <div class="list-group">
-            <a href="index_new.html" class="list-group-item">Home</a>
-            <a href="formula-01.html" class="list-group-item active">Formual 01</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-          </div>
-        </div><!--/span-->
-      </div><!--/row-->
-	  
-	  &nbsp;&nbsp;&nbsp;
-	  <hr/>
-	  
-	  <div>
-			<form action="/Calculate/" method="GET">
-					{%csrf_token%}
-					<table>
-                            <tr>
-                                <td><p class="button1">Vertical load on column including self weight, P1:</p></td>
-                                <td><input id="P1" name="P1" type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><p class="button1">Uniform Downward Load due to soil and footing on foundation bed, w:</p></td>
-                                <td><input id="W" name="W" type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><p class="button1">Overturning moment about X axis(parallel to long side), M<sub>x</sub>:</p></td>
-                                <td><input id="MX" name="MX"type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><p class="button1">Overturning moment about Y axis(parallel to short side), M<sub>y</sub>:</p></td>
-                                <td><input id="MY" name="MY" type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><p class="button1">Net Safe bearing capacity of soil, a<sub>1</sub>:</p></td>
-                                <td><input id="A1" name="A1" type="text"></td>
-                            </tr>
-                            <tr>
-                                <td><p class="button1">Ratio of Short side to Long side, r:</p></td>
-                                <td><input id="R" name="R" type="text"></td>
-                            </tr>
-                    </table>
-
-                </div>
+                </table>
                 <div align="center" style="padding-top:20px;">
-                    <input type="submit" id="submit_button" class="button">Submit</a>
+                    <input id="submit_button" type="button" value="Submit"></a>
                 </div>
+        </div>
+        <div class="tab-pane" id="profile">
+            Explanation
+        </div>
+        <div class="tab-pane" id="messages">
+            Things
+        </div>
+        <div class="tab-pane" id="settings">
+            Step by step
+        </div>
+        <div class="tab-pane" id="check_stability">
+            Check previous ones
+        </div>
+    </div>
+</div>
+{%endblock%}
 
-                </form>
-		  </div>
-
-      <hr>
-
-      <footer>
-        <p>&copy; Abode of Consultants 2014</p>
-      </footer>
-
-    </div><!--/.container-->
-
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="../site_media/dist/js/bootstrap.min.js"></script>
-    <script src="../site_media/offcanvas.js"></script>
-  </body>
-</html>
+{%block jsfiles%}
+    <script type="text/javascript" src="/site_media/Javascript/formula-01.js" language="JavaScript"></script>
+{%endblock%}
