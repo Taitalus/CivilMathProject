@@ -16,7 +16,7 @@
                 <table style="margin-top: 2%">
                     <tr>
                         <td width="70%">
-                            <!--table width="100%">
+                            <table width="100%">
                                 <thead>
                                     <td colspan="2" align="center" style="border-bottom: 2px solid #ccc"><b class="text"><h3>Input</h3></b></td>
                                 </thead>
@@ -30,34 +30,26 @@
                                         <td><input id="W" name="W" type="text"></td>
                                     </tr>
                                     <tr>
-                                        <td><p class="button1">Overturning moment about X axis(parallel to long side), M<sub>x</sub>:</p></td>
-                                        <td><input id="MX" name="MX"type="text"></td>
-                                    </tr>
-                                    <tr>
-                                        <td><p class="button1">Overturning moment about Y axis(parallel to short side), M<sub>y</sub>:</p></td>
-                                        <td><input id="MY" name="MY" type="text"></td>
+                                        <td><p class="button1">Overturning moment, M:</p></td>
+                                        <td><input id="M" name="M"type="text"></td>
                                     </tr>
                                     <tr>
                                         <td><p class="button1">Net Safe bearing capacity of soil, a<sub>1</sub>:</p></td>
                                         <td><input id="A1" name="A1" type="text"></td>
                                     </tr>
-                                    <tr>
-                                        <td><p class="button1">Ratio of Short side to Long side, r:</p></td>
-                                        <td><input id="R" name="R" type="text"></td>
-                                    </tr>
                                 </tbody>
-                            </table-->
+                            </table>
                         </td>
 						<td width="5%"></td>
                         <td width="30%" style="margin-left: 5%;">
-                            <!--table width="100%" id="result_pane" style="display: none;">
+                            <table width="100%" id="result_pane" style="display: none;">
                                 <thead>
                                 <td colspan="2" align="center" style="vertical-align:0%;border-bottom: 2px solid #ccc"><b class="text"><h3>Result</h3></b></td>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><b>Value of L:</b></td>
-                                        <td id="value_of_L"></td>
+                                        <td><b>Value of R:</b></td>
+                                        <td id="value_of_R"></td>
                                     </tr>
                                     <tr>
                                         <td><b>Value of lambda:</b></td>
@@ -68,7 +60,7 @@
                                         <td id="equation_no"></td>
                                     </tr>
                                 </tbody>
-                            </table-->
+                            </table>
                         </td>
                     </tr>
 
@@ -94,5 +86,5 @@
 {%endblock%}
 
 {%block jsfiles%}
-    <script type="text/javascript" src="/site_media/Javascript/formula-01.js" language="JavaScript"></script>
+    <script type="text/javascript" src="/site_media/Javascript/formula-02.js" language="JavaScript"></script>
 {%endblock%}
