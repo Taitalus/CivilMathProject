@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="/site_media/dist/img/logo.ico">
+
+        <title>Build Perfect</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="/site_media/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="/site_media/offcanvas.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">SR Measurement</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/Home/">Home</a></li>
+                        <li><a href="/Home/About/">About</a></li>
+                        <li><a href="/Home/Contact/">Contact</a></li>
+                    </ul>
+                </div><!-- /.nav-collapse -->
+            </div><!-- /.container -->
+        </div><!-- /.navbar -->
+
+
+        <div width="90%" class="container">
+            <table width="100%" style="">
+                <tr>
+                    <td width="75%">
+                        <table width="100%">
+                            <tr>
+                                <td style="vertical-align: 0%;">
+                                    <div class="jumbotron" align="center">
+                                        {%block pageheader%}{%endblock%}
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: 0%;">
+                                    {%block page_content%}{%endblock%}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+					<td width="5%"></td>
+                    <td width="20%">
+                        <div class="list-group">
+                            <a href="/Home/" class="list-group-item {%block page_active_home%}{%endblock%}">Home</a>
+                            <a href="/Home/formula1/" class="list-group-item {%block page_active_formula1%}{%endblock%}">Formula 01</a>
+                            <a href="/Home/formula2/" class="list-group-item {%block page_active_formula2%}{%endblock%}">Formula 02</a>
+                            <a href="/Home/formula3/" class="list-group-item {%block page_active_formula3%}{%endblock%}">Formula 03</a>
+                            <a href="#" class="list-group-item">Link</a>
+                            <a href="#" class="list-group-item">Link</a>
+                            <a href="#" class="list-group-item">Link</a>
+                            <a href="#" class="list-group-item">Link</a>
+                            <a href="#" class="list-group-item">Link</a>
+                            <a href="#" class="list-group-item">Link</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+		<hr/>
+        <footer>
+            <p>&nbsp;&nbsp;&nbsp;&copy; Abode of Consultants 2014</p>
+        </footer>
+        <script src="/site_media/jquery-2.0.3.min.js"></script>
+        <script src="/site_media/dist/js/bootstrap.min.js"></script>
+        <script src="/site_media/offcanvas.js"></script>
+        {%block jsfiles%}{%endblock%}
+    </body>
+</html>
