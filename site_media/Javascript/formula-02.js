@@ -7,7 +7,7 @@ $(document).ready(function(){
         $.get('CalculateFormula2/',{
             P1:P1.trim(),
             W: W.trim(),
-            MX:M.trim(),
+            M:M.trim(),
             A1:A1.trim()
             },function(data){
             $('#value_of_R').text(data['R']);

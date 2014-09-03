@@ -41,7 +41,7 @@ def CalculateFormula2(request):
     if request.method=="GET":
         P1=request.GET.get(u'P1','')
         W=request.GET.get(u'W','')
-        M=request.GET.get(u'MX','')
+        M=request.GET.get(u'M','')
         A1=request.GET.get(u'A1','')
         P1=unicode(P1)
         W=unicode(W)
