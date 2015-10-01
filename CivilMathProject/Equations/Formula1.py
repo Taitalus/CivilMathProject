@@ -24,7 +24,10 @@ def find_h(beta,meu):
     return (math.cos(beta)*math.cos(meu)/math.cos(beta-meu))
 
 def find_q(beta,meu):
-    return (math.sin(meu)/(math.cos(beta)*math.cos(beta-meu)))
+    if((beta+meu)*180/math.pi<=90):
+        return (math.sin(meu)/(math.cos(beta)*math.cos(beta-meu)))
+    else:
+        return (math.cos(meu)/(math.sin(beta)*math.cos(beta-meu)))
 
 def find_u(beta,meu):
     return (math.sin(meu)*math.cos(meu)/square((1/math.cos(beta-meu))))
@@ -162,10 +165,11 @@ def find_L_formula1(P1,W,MX,MY,A1,R):
     if((beta+meu)*180/math.pi<=90):
         g=find_g(beta, meu)
         h=find_h(beta, meu)
+        condition_of_angle=1
     else:
         g=find_h(beta, meu)
         h=find_g(beta,meu)
-    
+        condition_of_angle=2
     q=find_q(beta, meu)
     u=find_u(beta, meu)
     i=find_i(q, g, t)
@@ -234,6 +238,7 @@ def find_L_formula1(P1,W,MX,MY,A1,R):
     result={
             'L':L,
             'lambda':value_of_lamba,
-            'equation':equation_no
+            'equation':equation_no,
+            'condition':condition_of_angle
     }
     return result

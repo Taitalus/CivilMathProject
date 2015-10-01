@@ -17,6 +17,7 @@ $(document).ready(function(){
             $('#value_of_L').text(data['L']);
             $('#value_of_lambda').text(data['lambda']);
             $('#equation_no').text(data['equation']);
+            $('#angle_no').text(data['condition']);
             $('#result_pane').css({'display':'block'});
         });
     });
